@@ -61,7 +61,7 @@ img {
 .picture:hover {
   transform: scale(1.15);
   z-index: 1;
-  transition: 0.2s ease;
+  transition: 0.7s ease;
 }
 
 
