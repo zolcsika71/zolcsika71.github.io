@@ -1,0 +1,155 @@
+body {
+  margin-top: 40px;
+  background-color: azure;
+  flex-wrap: wrap;
+}
+
+.viewer {
+  display: flex;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  border: ridge;
+  border-radius: 10px;
+  max-width: 900px;
+  max-height: 400px;
+  margin: auto;
+  box-shadow: 0 10px 30px 1px black;
+}
+
+.side {
+  width: 50px;
+  margin: auto;
+}
+
+#left {
+  transform: rotate(0.5turn);
+  width: 50px;
+}
+
+#left:hover {
+  transform: scale(1.4) rotate(0.5turn);
+}
+
+#right {
+  width: 50px;
+}
+
+#right:hover {
+  transform: scale(1.4);
+}
+
+img {
+  display: block;
+  position: relative;
+  max-width:900px;
+  max-height: 400px;
+  z-index: 0;
+}
+
+#photo {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.picture {
+  position: relative;
+  width: 100%;
+}
+
+
+.picture:hover {
+  transform: scale(1.15);
+  z-index: 1;
+}
+
+
+.picture:hover .subtitle {
+  height: 15%;
+}
+
+.subtitle {
+  position: absolute;
+  background-color: #708090;
+  color: white;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-origin: border-box;
+  opacity: 0.7;
+  overflow: hidden;
+  transition: 0.5s ease;
+  font-family: 'PT Serif', serif;
+  /*transition-timing-function: cubic-bezier(0,0,1,1);*/
+}
+
+h1 , p {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left:8%;
+}
+
+h1 {
+  margin-left:5px;
+  margin-bottom: -13px;
+  margin-top: -10px;
+  opacity: 1.5;
+}
+
+p {
+  margin: auto;
+  opacity: 1.5;
+  width: 700px;
+  top:75%;
+  left: 53%;
+}
+
+.thumbnails {
+  display: flex;
+  margin: auto;
+  padding: 30px;
+  max-width: 800px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.thumbnail {
+  position: relative;
+  height: 0;
+  width: 100px;
+}
+
+.thumbnails-pictures {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin: 20px 5px auto;
+  box-shadow: 0 10px 30px 1px black;
+  border: ridge;
+}
+
+.thumbnails-title {
+  display: none;
+  position: relative;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  top: -140px;
+  left: 8px;
+  font-family: 'PT Serif', serif;
+}
+.thumbnail:hover .thumbnails-title {
+  display: block;
+}
+
+.thumbnail:hover .thumbnails-pictures {
+  transform: scale(1.08);
+}
+
+
+
+
