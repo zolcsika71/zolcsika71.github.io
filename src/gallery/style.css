@@ -143,6 +143,7 @@ p {
   left: 8px;
   font-family: 'PT Serif', serif;
 }
+
 .thumbnail:hover .thumbnails-title {
   display: block;
 }
