@@ -1,0 +1,19 @@
+{
+  "name": "zolcsika71.github.io",
+  "version": "1.0.0",
+  "description": "web develpment project",
+  "main": "script.js",
+  "scripts": {
+    "test": "node script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zolcsika71/zolcsika71.github.io.git"
+  },
+  "author": "Zoltanka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zolcsika71/zolcsika71.github.io/issues"
+  },
+  "homepage": "https://github.com/zolcsika71/zolcsika71.github.io#readme"
+}
