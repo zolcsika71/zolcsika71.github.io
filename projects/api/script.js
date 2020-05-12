@@ -17,13 +17,13 @@ const
                 <div class="name">${data.name}</div>
                 <img id="photo">
                 <div class="details">
-                    <span>Height: ${data.height}</span>
-                    <span>Weight: ${data.weight}</span>
+                    <span>Height: </span>
+                    <span>Weight: </span>
                 </div>
             </div>
         `
         $('#photo').attr('src', `${data.sprites.front_default}`);
-        let pokemonDiv = document.querySelector('.pokemon')
+        let pokemonDiv = document.querySelector('.pokemon');
         pokemonDiv.innerHTML = html
     };
 

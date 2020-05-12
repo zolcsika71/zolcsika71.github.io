@@ -1,0 +1,49 @@
+.background {
+  background: cyan;
+  width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  background: white;
+  font-family: 'Didact Gothic', serif;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.addItem {
+  display: inline-block;
+}
+
+
+.todo-background {
+  background: green;
+  width: 600px;
+}
+
+
+
+#add {
+  font-family: 'Didact Gothic', sans-serif;
+  font-weight: lighter;
+}
+
+.list li {
+  width: 500px;
+  margin: auto;
+  font-family: 'Didact Gothic', sans-serif;
+  background: lightgray;
+  list-style-type: none;
+  display: flex;
+}
+
+.buttonImages {
+  width: 10px;
+}
+
+.list #text {
+  width: 500px;
+  font-weight: bold;
+  background: red;
+}
