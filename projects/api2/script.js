@@ -42,7 +42,7 @@ const
      */
     // TODO onerror -> if picture not found run standby();
     standby = ()  => {
-        document.getElementById('photo').src = 'https://www.google.com/images/srpr/logo11w.png'
+        document.getElementById('photo').src = './img/aMan.jpg';
     },
     fetchData = (id => {
 
