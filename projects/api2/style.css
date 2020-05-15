@@ -45,7 +45,8 @@ body {
 }
 
 .displayData {
-
+  display: flex;
+  flex-direction: column;
   width: 400px;
   height: 300px;
 
@@ -58,7 +59,7 @@ body {
   font-size: 40px;
 }
 
-.photo {
+#photo {
   margin: auto;
   max-width: 100%;
   max-height: 100%;
