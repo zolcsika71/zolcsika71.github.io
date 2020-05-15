@@ -40,7 +40,7 @@ const
         });
     },
      */
-    // TODO onerror -> if picture not found run standby
+    // TODO onerror -> if picture not found run standby();
     standby = ()  => {
         document.getElementById('photo').src = 'https://www.google.com/images/srpr/logo11w.png'
     },
