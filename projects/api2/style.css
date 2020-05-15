@@ -16,7 +16,7 @@ body {
   justify-content: space-between;
   max-width: 400px;
   max-height: 400px;
-  border: darkgreen solid 3px;
+  border: darkgreen ridge 3px;
   background: azure;
   margin: auto;
   box-shadow: 0 10px 30px 1px black;
