@@ -13,17 +13,26 @@
 </head>
 <body>
     <h1 class="heading">who is your  favourite pokemon?</h1>
-    <form class="input-form">
-        <!--<label for="pokemonName">Name</label>-->
-        <input type="text">
-        <button id="pokemonName" type="button">search for name</button>
-        <!--<label for="id">Id</label>-->
-        <input type="pokemonId">
-        <button id="id" type="button">search for id</button>
-    </form>
+    <form class="input-form"></form>
+
+    <div class="pokemonViewer">
+        <div class="side">
+            <img id="left" src="./svg/arrow.svg" alt="">
+        </div>
+        <div class="displayData">
+
+            <div class="name"></div>
+            <img id="photo">
+            <div class="details"></div>
+
+        </div>
+        <div class="side">
+            <img id="right" src="./svg/arrow.svg" alt="">
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
-    <script type="text/javascript" src="./script.js"></script>
+    <script type="module" src="./script.js"></script>
     
 </body>
 </html>
