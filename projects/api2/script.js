@@ -44,6 +44,8 @@ const
 
         console.log(`id: ${id}`);
 
+        url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+
         fetch(url)
             .then((data) => data.json())
             .then((data) => generateHtml(data))
