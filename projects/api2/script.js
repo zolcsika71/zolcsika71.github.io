@@ -1,15 +1,10 @@
+"use strict";
 
-
-
-let BB = function (x) {
-    console.log(JSON.stringify(x, null, 2));
-},
-    pokemonArray = [],
-    id = 1,
-    url = `https://pokeapi.co/api/v2/pokemon/${id}`,
-    firstRound = true;
+let id = 1,
+    url = `https://pokeapi.co/api/v2/pokemon/${id}`;
 
 const
+    /*
     get = function (url) {
         return fetch(url).then(response => {
             if (response.ok) {
@@ -44,6 +39,7 @@ const
             return Promise.reject(new NetworkError(error.message));
         });
     },
+     */
     fetchData = (id) => {
 
         console.log(`id: ${id}`);
@@ -58,18 +54,14 @@ const
 
         console.log(pokemon);
         $('.name').html(pokemon.name);
-        $('#photo').attr('src', pokemon.sprites.front_default);
+        $('#photo').attr('src', pokemon.sprites.front_default).css('align-items', 'center');
 
         $('.details').html(`
             <span>Height: ${pokemon.height}</span>
             <span>Weight: ${pokemon.weight}</span>
         `);
-
-
     });
 
-
-id = 1;
 
 fetchData(id);
 
