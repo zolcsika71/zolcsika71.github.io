@@ -40,7 +40,7 @@ const
         });
     },
      */
-    fetchData = (id) => {
+    fetchData = (id => {
 
         console.log(`id: ${id}`);
 
@@ -49,7 +49,7 @@ const
         fetch(url)
             .then((data) => data.json())
             .then((data) => generateHtml(data))
-    },
+    }),
     generateHtml = (pokemon => {
 
         console.log(pokemon);
