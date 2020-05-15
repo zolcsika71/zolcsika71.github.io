@@ -40,6 +40,10 @@ const
         });
     },
      */
+    // TODO onerror -> if picture not found run standby
+    standby = ()  => {
+        document.getElementById('photo').src = 'https://www.google.com/images/srpr/logo11w.png'
+    },
     fetchData = (id => {
 
         console.log(`id: ${id}`);
@@ -53,6 +57,7 @@ const
     generateHtml = (pokemon => {
 
         console.log(pokemon);
+
         $('.name').html(pokemon.name);
         $('#photo').attr('src', pokemon.sprites.front_default).css('align-items', 'center');
 
