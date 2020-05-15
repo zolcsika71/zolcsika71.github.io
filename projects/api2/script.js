@@ -70,7 +70,6 @@ const
 
 fetchData(id);
 
-
 $('#right').click(() => {
     if (id < 807) {
         id++;

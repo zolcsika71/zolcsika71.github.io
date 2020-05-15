@@ -9,6 +9,7 @@ body {
   font-weight: bold;
   font-size: 40px;
   margin-bottom: 50px;
+  background-color: lightblue;
 }
 
 .pokemonViewer {
@@ -17,14 +18,15 @@ body {
   max-width: 400px;
   max-height: 400px;
   border: darkgreen ridge 3px;
-  background: azure;
   margin: auto;
   box-shadow: 0 10px 30px 1px black;
+  background-color: brown;
 }
 
 .side {
   width: 50px;
   margin: auto;
+  background-color: darkred;
 }
 
 #left {
@@ -49,16 +51,19 @@ body {
   flex-direction: column;
   width: 400px;
   height: 300px;
+  background-color: purple;
 }
 
 .name {
   text-align: center;
   font-weight: bold;
   font-size: 40px;
+  background-color: lightgreen;
 }
 
 #photo {
   margin: auto;
+  background-color: blue;
 }
 
 .details {
@@ -66,6 +71,7 @@ body {
   justify-content: space-between;
   text-align: center;
   font-size: 30px;
+  background-color: orangered;
 }
 
 
