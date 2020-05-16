@@ -15,8 +15,8 @@ body {
 .pokemonViewer {
   display: flex;
   justify-content: space-between;
-  width: 55%;
-  height: 45px;
+  width: 35%;
+  height: 30px;
   margin: auto;
   box-shadow: 0 10px 30px 1px black;
   background-color: azure;
@@ -24,13 +24,12 @@ body {
 }
 
 .side {
-  width: 50px;
   margin: auto;
 }
 
 #left {
   transform: rotate(0.5turn);
-  width: 50px;
+  width: 20px;
 }
 
 #left:hover {
@@ -38,7 +37,7 @@ body {
 }
 
 #right {
-  width: 50px;
+  width: 20px;
 }
 
 #right:hover {
@@ -55,7 +54,8 @@ body {
 .name {
   text-align: center;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 25px;
+  /*background-color: #D3D3D3;*/
 }
 
 #photo {
