@@ -74,7 +74,7 @@ const
 fetchData(id);
 
 $('#right').click(() => {
-    if (id < 807) {
+    if (id < 802) {
         id++;
         fetchData(id);
     } else {
@@ -88,7 +88,7 @@ $('#left').click(() => {
         id--;
         fetchData(id);
     } else {
-        id = 807;
+        id = 802;
         fetchData(id);
     }
 })
