@@ -12,10 +12,10 @@ body {
   margin-bottom: 50px;
 }
 
-.pokemonViewer {
+.nameSelector {
   display: flex;
   justify-content: space-between;
-  width: 35%;
+  width: 20%;
   height: 30px;
   margin: auto;
   box-shadow: 0 10px 30px 1px black;
@@ -23,13 +23,22 @@ body {
 
 }
 
+.name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  width: 50%;
+  /*background-color: #D3D3D3;*/
+}
+
 .side {
-  margin: auto;
+
 }
 
 #left {
   transform: rotate(0.5turn);
   width: 20px;
+  height: 30px;
 }
 
 #left:hover {
@@ -38,6 +47,7 @@ body {
 
 #right {
   width: 20px;
+  height: 30px;
 }
 
 #right:hover {
@@ -49,14 +59,10 @@ body {
   flex-direction: column;
   width: 400px;
   height: 400px;
+  margin: auto;
 }
 
-.name {
-  text-align: center;
-  font-weight: bold;
-  font-size: 25px;
-  /*background-color: #D3D3D3;*/
-}
+
 
 #photo {
   margin: auto;

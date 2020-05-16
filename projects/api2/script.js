@@ -66,7 +66,7 @@ const
             <span>Weight: ${pokemon.weight}</span>
         `);
         $('.developer').html(`
-            <span>pokemon id: ${pokemon.id}</span>
+            <span># ${pokemon.id}</span>
         `);
     });
 
