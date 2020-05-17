@@ -18,7 +18,7 @@ const colors = {
 };
 const main_types = Object.keys(colors);
 
-const fetchPokemons = async () => {
+const fetchPokemon = async () => {
     for (let i = 1; i <= pokemons_number; i++) {
         await getPokemon(i);
     }
@@ -42,27 +42,23 @@ function createPokemonCard(pokemon) {
 
     pokemonEl.style.backgroundColor = color;
 
-    const pokeInnerHTML = `
+    pokemonEl.innerHTML = `
+
         <div class="img-container">
-            <img src="https://pokeres.bastionbot.org/images/pokemon/${
-        pokemon.id
-    }.png" alt="${name}" />
+            <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" alt="${name}" />
         </div>
         <div class="info">
-            <span class="number">#${pokemon.id
-    .toString()
-    .padStart(3, '0')}</span>
+            <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
             <h3 class="name">${name}</h3>
             <small class="type">Type: <span>${type}</span></small>
         </div>
+        
     `;
-
-    pokemonEl.innerHTML = pokeInnerHTML;
 
     poke_container.appendChild(pokemonEl);
 }
 
-fetchPokemons();
+fetchPokemon();
 
 
 
