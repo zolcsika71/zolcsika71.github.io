@@ -71,12 +71,12 @@ const close_btn = document.querySelector('.close-btn');
 const social_panel_container = document.querySelector('.social-panel-container');
 
 floating_btn.addEventListener('click', () => {
-    console.log(`visible`);
+    console.log(`clicked`);
     social_panel_container.classList.toggle('visible')
 });
 
 close_btn.addEventListener('click', () => {
-    console.log(`unVisible`);
+    console.log(`unClicked`);
     social_panel_container.classList.remove('visible')
 });
 
