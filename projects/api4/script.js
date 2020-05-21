@@ -1,5 +1,5 @@
 const poke_container = document.getElementById('poke_container');
-const pokemons_number = 800;
+const numberOfPokemon = 800;
 const colors = {
     fire: '#FDDFDF',
     grass: '#DEFDE0',
@@ -19,7 +19,7 @@ const colors = {
 const main_types = Object.keys(colors);
 
 const fetchPokemon = async () => {
-    for (let i = 1; i <= pokemons_number; i++) {
+    for (let i = 1; i <= numberOfPokemon; i++) {
         await getPokemon(i);
     }
 };
@@ -38,9 +38,7 @@ function createPokemonCard(pokemon) {
     const poke_types = pokemon.types.map(type => type.type.name);
     const type = main_types.find(type => poke_types.indexOf(type) > -1);
     const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
-    const color = colors[type];
-
-    pokemonEl.style.backgroundColor = color;
+    pokemonEl.style.backgroundColor = colors[type];
 
     pokemonEl.innerHTML = `
 
@@ -58,16 +56,14 @@ function createPokemonCard(pokemon) {
     poke_container.appendChild(pokemonEl);
 }
 
-fetchPokemon();
+fetchPokemon().then(r => console.log(`${r}`));
 
-
-
-
-
-
-
-
-
+$(".searchButton").click(function(){
+    console.log(`heyy`);
+    $(this).toggleClass("bg-green");
+    $(".fas").toggleClass("color-white");
+    $(".input").focus().toggleClass("active-width").val('');
+});
 
 // SOCIAL PANEL JS
 const floating_btn = document.querySelector('.floating-btn');
