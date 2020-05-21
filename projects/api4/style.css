@@ -129,17 +129,6 @@ body {
   letter-spacing: 1px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* SOCIAL PANEL CSS */
 .social-panel-container {
   position: fixed;
@@ -162,7 +151,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Muli';
+  font-family: 'Muli', serif;
   position: relative;
   height: 169px;
   width: 370px;
@@ -211,7 +200,7 @@ body {
 .social-panel h4 {
   margin: 20px 0;
   color: #97A5CE;
-  font-family: 'Muli';
+  font-family: 'Muli', serif;
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;

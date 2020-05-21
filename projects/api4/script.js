@@ -59,7 +59,7 @@ function createPokemonCard(pokemon) {
 fetchPokemon().then(r => console.log(`${r}`));
 
 $(".searchButton").click(function(){
-    console.log(`bitch`);
+    console.log(`search clicked`);
     $(this).toggleClass("bg-green");
     $(".fas").toggleClass("color-white");
     $(".input").focus().toggleClass("active-width").val('type a name');
@@ -71,10 +71,12 @@ const close_btn = document.querySelector('.close-btn');
 const social_panel_container = document.querySelector('.social-panel-container');
 
 floating_btn.addEventListener('click', () => {
+    console.log(`visible`);
     social_panel_container.classList.toggle('visible')
 });
 
 close_btn.addEventListener('click', () => {
+    console.log(`unVisible`);
     social_panel_container.classList.remove('visible')
 });
 
