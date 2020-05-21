@@ -62,7 +62,7 @@ $(".searchButton").click(function(){
     console.log(`search clicked`);
     $(this).toggleClass("bg-green");
     $(".fas").toggleClass("color-white");
-    $(".input").focus().toggleClass("active-width").val('type a name');
+    $(".input").focus().toggleClass("active-width").val('type a name, my dear');
 });
 
 // SOCIAL PANEL JS
