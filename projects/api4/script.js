@@ -59,10 +59,10 @@ function createPokemonCard(pokemon) {
 fetchPokemon().then(r => console.log(`${r}`));
 
 $(".searchButton").click(function(){
-    console.log(`heyy`);
+    console.log(`bitch`);
     $(this).toggleClass("bg-green");
     $(".fas").toggleClass("color-white");
-    $(".input").focus().toggleClass("active-width").val('');
+    $(".input").focus().toggleClass("active-width").val('type a name');
 });
 
 // SOCIAL PANEL JS
