@@ -23,7 +23,7 @@ const
         normal: '#F5F5F5'
     },
     mainTypes = Object.keys(colors),
-    fetchPokemon = async (name) => {
+    fetchPokemon = async (name = undefined) => {
         for (let i = 1; i <= numberOfPokemon; i++) {
             await getPokemon(i, name);
         }
@@ -71,11 +71,11 @@ const
         $("#pokeContainer").empty();
         if (searchName === undefined) {
             console.log('no search name');
-            searchName = document.getElementById("input").value;
+            fetchPokemon();
         } else {
             console.log(`getData: ${searchName}`);
             fetchPokemon(searchName)
-            .then(searchName => searchName);
+                .then(searchName => searchName);
         }
     };
 
