@@ -38,18 +38,19 @@ const
     },
     createPokemonCard = (pokemon, name) =>  {
 
-        console.log(`name: ${name} poke name: ${pokemon.name}`);
+        //console.log(`name: ${name} poke name: ${pokemon.name}`);
 
-        if (pokemon.name === name || name === undefined || name === searchMessage) {
+        if (pokemon.name.startsWith(name)) {
 
             console.log(`here`);
 
             let pokemonEl = document.createElement('div');
 
             pokemonEl.classList.add('pokemon');
+
             let pokeTypes = pokemon.types.map(type => type.type.name),
-            type = mainTypes.find(type => pokeTypes.indexOf(type) > -1),
-            name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+                type = mainTypes.find(type => pokeTypes.indexOf(type) > -1),
+                name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
 
             pokemonEl.style.backgroundColor = colors[type];
 
@@ -67,9 +68,18 @@ const
             `;
             pokeContainer.appendChild(pokemonEl);
         }
+    },
+    getData = () => {
+        $("#pokeContainer").empty();
+        searchName = document.getElementById("input").value;
+        console.log(`getData: ${searchName}`);
+        fetchPokemon(searchName)
+            .then(searchName => searchName);
     };
 
-fetchPokemon().then(r => r);
+
+fetchPokemon()
+    .then(r => r);
 
 $(".searchButton").click(function () {
     //fetchPokemon().then(r => r);
@@ -79,12 +89,7 @@ $(".searchButton").click(function () {
     $("#input").focus().toggleClass("active-width").val(`${searchMessage}`);
 });
 
-function getData() {
-    $("#pokeContainer").empty();
-    searchName = document.getElementById("input").value;
-    fetchPokemon(searchName)
-        .then(searchName => searchName);
-}
+
 
 
 
