@@ -70,8 +70,9 @@ const
     getData = () => {
         $("#pokeContainer").empty();
         if (searchName === undefined) {
-            console.log('no search name');
-            fetchPokemon();
+            console.log('getData: no search name');
+            fetchPokemon()
+                .then(searchName => searchName);
         } else {
             console.log(`getData: ${searchName}`);
             fetchPokemon(searchName)
