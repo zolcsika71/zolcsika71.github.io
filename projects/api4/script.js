@@ -1,84 +1,93 @@
-const poke_container = document.getElementById('poke_container');
-const numberOfPokemon = 800;
-const colors = {
-    fire: '#FDDFDF',
-    grass: '#DEFDE0',
-    electric: '#FCF7DE',
-    water: '#DEF3FD',
-    ground: '#f4e7da',
-    rock: '#d5d5d4',
-    fairy: '#fceaff',
-    poison: '#98d7a5',
-    bug: '#f8d5a3',
-    dragon: '#97b3e6',
-    psychic: '#eaeda1',
-    flying: '#F5F5F5',
-    fighting: '#E6E0D4',
-    normal: '#F5F5F5'
-};
-const main_types = Object.keys(colors);
+"use strict";
 
-const fetchPokemon = async () => {
-    for (let i = 1; i <= numberOfPokemon; i++) {
-        await getPokemon(i);
-    }
-};
+let searchName;
 
-const getPokemon = async id => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    const res = await fetch(url);
-    const pokemon = await res.json();
-    createPokemonCard(pokemon);
-};
+const
+    searchMessage = 'type a name, my dear...',
+    pokeContainer = document.getElementById('pokeContainer'),
+    numberOfPokemon = 800,
+    colors = {
+        fire: '#FDDFDF',
+        grass: '#DEFDE0',
+        electric: '#FCF7DE',
+        water: '#DEF3FD',
+        ground: '#f4e7da',
+        rock: '#d5d5d4',
+        fairy: '#fceaff',
+        poison: '#98d7a5',
+        bug: '#f8d5a3',
+        dragon: '#97b3e6',
+        psychic: '#eaeda1',
+        flying: '#F5F5F5',
+        fighting: '#E6E0D4',
+        normal: '#F5F5F5'
+    },
+    mainTypes = Object.keys(colors),
+    fetchPokemon = async (name = undefined) => {
+        for (let i = 1; i <= numberOfPokemon; i++) {
+            await getPokemon(i, name);
+        }
+    },
+    getPokemon = async (id, name) => {
+        let url = `https://pokeapi.co/api/v2/pokemon/${id}`,
+            res = await fetch(url),
+            pokemon = await res.json();
 
-function createPokemonCard(pokemon) {
-    const pokemonEl = document.createElement('div');
-    pokemonEl.classList.add('pokemon');
+        createPokemonCard(pokemon, name);
 
-    const poke_types = pokemon.types.map(type => type.type.name);
-    const type = main_types.find(type => poke_types.indexOf(type) > -1);
-    const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
-    pokemonEl.style.backgroundColor = colors[type];
+    },
+    createPokemonCard = (pokemon, name) =>  {
 
-    pokemonEl.innerHTML = `
+        //console.log(`name: ${name} poke name: ${pokemon.name}`);
 
-        <div class="img-container">
-            <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" alt="${name}" />
-        </div>
-        <div class="info">
-            <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
-            <h3 class="name">${name}</h3>
-            <small class="type">Type: <span>${type}</span></small>
-        </div>
+        let pokemonEl = document.createElement('div');
+
+        pokemonEl.classList.add('pokemon');
+
+        if (pokemon.name === name || name === undefined) {
+            console.log(`here`);
+            let pokeTypes = pokemon.types.map(type => type.type.name),
+            type = mainTypes.find(type => pokeTypes.indexOf(type) > -1),
+            name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+
+            pokemonEl.style.backgroundColor = colors[type];
+
+            pokemonEl.innerHTML = `
         
-    `;
+                <div class="img-container">
+                    <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" alt="${name}" />
+                </div>
+                <div class="info">
+                    <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
+                    <h3 class="name">${name}</h3>
+                    <small class="type">Type: <span>${type}</span></small>
+                </div>
+                
+            `;
+            pokeContainer.appendChild(pokemonEl);
+        }
+    };
 
-    poke_container.appendChild(pokemonEl);
-}
+fetchPokemon().then(r => r);
 
-fetchPokemon().then(r => console.log(`${r}`));
-
-$(".searchButton").click(function(){
-    console.log(`search clicked`);
+$(".searchButton").click(function () {
+    //fetchPokemon().then(r => r);
+    //console.log(`search clicked`);
     $(this).toggleClass("bg-green");
     $(".fas").toggleClass("color-white");
-    $(".input").focus().toggleClass("active-width").val('type a name, my dear');
+    $("#input").focus().toggleClass("active-width").val(`${searchMessage}`);
+
+
 });
 
-// SOCIAL PANEL JS
-const floating_btn = document.querySelector('.floating-btn');
-const close_btn = document.querySelector('.close-btn');
-const social_panel_container = document.querySelector('.social-panel-container');
+function getData() {
+    $("#pokeContainer").empty();
+    searchName = document.getElementById("input").value;
+    fetchPokemon(searchName)
+        .then(searchName => searchName);
+}
 
-floating_btn.addEventListener('click', () => {
-    console.log(`clicked`);
-    social_panel_container.classList.toggle('visible')
-});
 
-close_btn.addEventListener('click', () => {
-    console.log(`unClicked`);
-    social_panel_container.classList.remove('visible')
-});
 
 
 

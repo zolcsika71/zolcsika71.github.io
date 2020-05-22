@@ -17,50 +17,20 @@
 <body>
     <div class="wrapper">
         <div class="searchBox">
-            <input type="text" class="input">
+            <label for="input"></label>
+            <input type="text" id="input" oninput="getData()">
 
             <div class="searchButton">
-                <p class="button-subtitle">?</p>
+                <img class="button-subtitle" src="./img/search.png" alt="">
+                <!--<p class="button-subtitle"></p>-->
                 <i class="fas fa-search"></i>
             </div>
 
         </div>
     </div>
-    <div id="poke_container" class="poke-container"></div>
+    <div id="pokeContainer" class="poke-container"></div>
 
-    <!-- SOCIAL PANEL HTML -->
-    <div class="social-panel-container">
-        <div class="social-panel">
-            <button class="close-btn"><i class="fas fa-times"></i>X</button>
-            <!-- SOCIAL PANEL TITLE -->
-            <h4>Get in touch on</h4>
-            <ul>
-                <li>
-                    <a href="https://example.com" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://example.com" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://example.com" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://example.com" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <button class="floating-btn">
-        Contact Me
-    </button>
+
 
 
 
