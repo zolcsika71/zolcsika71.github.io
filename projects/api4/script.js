@@ -23,7 +23,7 @@ const
         normal: '#F5F5F5'
     },
     mainTypes = Object.keys(colors),
-    fetchPokemon = async (name = undefined) => {
+    fetchPokemon = async (name) => {
         for (let i = 1; i <= numberOfPokemon; i++) {
             await getPokemon(i, name);
         }
@@ -38,14 +38,15 @@ const
     },
     createPokemonCard = (pokemon, name) =>  {
 
-        //console.log(`name: ${name} poke name: ${pokemon.name}`);
+        console.log(`name: ${name} poke name: ${pokemon.name}`);
 
-        let pokemonEl = document.createElement('div');
+        if (pokemon.name === name || name === undefined || name === searchMessage) {
 
-        pokemonEl.classList.add('pokemon');
-
-        if (pokemon.name === name || name === undefined) {
             console.log(`here`);
+
+            let pokemonEl = document.createElement('div');
+
+            pokemonEl.classList.add('pokemon');
             let pokeTypes = pokemon.types.map(type => type.type.name),
             type = mainTypes.find(type => pokeTypes.indexOf(type) > -1),
             name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
@@ -76,8 +77,6 @@ $(".searchButton").click(function () {
     $(this).toggleClass("bg-green");
     $(".fas").toggleClass("color-white");
     $("#input").focus().toggleClass("active-width").val(`${searchMessage}`);
-
-
 });
 
 function getData() {
