@@ -38,48 +38,54 @@ const
     },
     createPokemonCard = (pokemon, name) =>  {
 
-        //console.log(`name: ${name} poke name: ${pokemon.name}`);
+        console.log(`name: ${name} poke name: ${pokemon.name}`);
 
-        if (pokemon.name.startsWith(name) || name === undefined || name === searchMessage) {
+        console.log(`here`);
 
-            console.log(`here`);
+        let pokemonEl = document.createElement('div');
 
-            let pokemonEl = document.createElement('div');
+        pokemonEl.classList.add('pokemon');
 
-            pokemonEl.classList.add('pokemon');
+        let pokeTypes = pokemon.types.map(type => type.type.name),
+            type = mainTypes.find(type => pokeTypes.indexOf(type) > -1),
+            displayName = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
 
-            let pokeTypes = pokemon.types.map(type => type.type.name),
-                type = mainTypes.find(type => pokeTypes.indexOf(type) > -1),
-                name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+        pokemonEl.style.backgroundColor = colors[type];
 
-            pokemonEl.style.backgroundColor = colors[type];
-
-            pokemonEl.innerHTML = `
+        pokemonEl.innerHTML = `
         
                 <div class="img-container">
-                    <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" alt="${name}" />
+                    <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" alt="${displayName}" />
                 </div>
                 <div class="info">
                     <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
-                    <h3 class="name">${name}</h3>
+                    <h3 class="name">${displayName}</h3>
                     <small class="type">Type: <span>${type}</span></small>
                 </div>
                 
             `;
-            pokeContainer.appendChild(pokemonEl);
-        }
+        pokeContainer.appendChild(pokemonEl);
+
     },
     getData = () => {
         $("#pokeContainer").empty();
-        searchName = document.getElementById("input").value;
-        console.log(`getData: ${searchName}`);
-        fetchPokemon(searchName)
+        if (searchName === undefined) {
+            console.log('no search name');
+            searchName = document.getElementById("input").value;
+        } else {
+            console.log(`getData: ${searchName}`);
+            fetchPokemon(searchName)
             .then(searchName => searchName);
+        }
     };
 
 
-fetchPokemon()
+/*fetchPokemon()
     .then(r => r);
+
+ */
+
+getData();
 
 $(".searchButton").click(function () {
     //fetchPokemon().then(r => r);
