@@ -40,7 +40,7 @@ const
 
         //console.log(`name: ${name} poke name: ${pokemon.name}`);
 
-        if (pokemon.name.startsWith(name)) {
+        if (pokemon.name.startsWith(name) || name === undefined || name === searchMessage) {
 
             console.log(`here`);
 
